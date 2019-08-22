@@ -19,7 +19,8 @@ public class LoginController {
 
         //添加session用于存储用户名密码校验
         //@RequestParam("username") String username,
-        // 意思是从请求参数获取username这个参数然后转化成现在的String username，没有获取到的话就会报错
+        // 意思是从request域的请求参数获取username这个参数，注意区别@PathVaviable(""),这个是从请求路径获取参数
+        // 然后转化成现在的String username，没有获取到的话就会报错
 
 
         if(!StringUtils.isEmpty(username) && "123456".equals(password)){
