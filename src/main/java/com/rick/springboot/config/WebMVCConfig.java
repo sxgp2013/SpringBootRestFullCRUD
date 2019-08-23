@@ -30,7 +30,7 @@ public class WebMVCConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //添加拦截器，并且拦截的路径是全部
-        //关于静态资源*.css,*.js等springboot已经处理好了，不需要我们自己处理
+        //关于静态资源*.css,*.js等springboot已经处理好了，不需要我们自己处理,但是thyemleaf处理的静态资源需要添加到拦截域外
         registry.addInterceptor(new LoginHanderIntercepter()).addPathPatterns("/**")
                 .excludePathPatterns("/index.html","/","/user/login","/asserts/**","/webjars/**");
                 //但是要排除index.html,不然无法进入登录页面,
